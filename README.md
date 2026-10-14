@@ -87,7 +87,7 @@ The following hosted SaaS platforms provide managed identity, authentication, cr
 A comprehensive collection of open-source IAM stacks, zero-trust gateways, policy decision points (PDP), and verifiable credential engines for self-hosted and vendor-independent agent identity infrastructure.
 
 > [!TIP]
-> Repositories are sorted in **descending order by GitHub Stars_Count**. Stars_Badges display real-time metrics and link directly to each project's stargazers page.
+> Repositories are sorted in **descending order by GitHub_Stars_Count**. Stars_Badges display real-time metrics and link directly to each project's stargazers page.
 
 | 📦 Repository & Link | ⭐ Community Stargazers | 📜 License | 🎯 Architecture & Agent Identity Focus |
 | :--- | :---: | :---: | :--- |
