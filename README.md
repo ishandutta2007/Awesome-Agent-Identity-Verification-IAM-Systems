@@ -31,6 +31,8 @@
 - [📜 Open Standards, RFCs & Protocols](#-open-standards-rfcs--protocols)
 - [🏗️ Architectural Reference Blueprint](#️-architectural-reference-blueprint)
 - [🤝 How to Contribute](#-how-to-contribute)
+- [💖 Support](#-support)
+- [📈 Star History](#--star-history)
 - [⚖️ Disclaimer](#️-disclaimer)
 
 ---
@@ -177,6 +179,24 @@ Contributions from security researchers, platform engineers, and open-source mai
    - For Open-Source projects: include name, GitHub link, star badge (`style=social&color=white` linking to `/stargazers`), license, and 1–2 sentence architectural focus. Insert in the correct star-sorted position.
 4. 🧪 **Verify markdown rendering & links**.
 5. 🚀 **Submit a Pull Request** with a concise summary of changes and sources.
+
+---
+
+## 💖 Support
+
+A huge **thank you** to everyone building, researching, and contributing to the open AI agent identity and IAM ecosystem! 🙏
+
+If you find this repository valuable, please consider supporting the project:
+- ⭐ **Star this repository** on GitHub to help others discover it.
+- 🍴 **Fork and contribute** your findings, architectural patterns, and tool submissions.
+- 📢 **Share** with your network, engineering teams, and security communities.
+- ☕ **Buy me a coffee / Sponsor**: Support continuous maintenance and ecosystem tracking directly via the [GitHub Sponsor Dashboard](https://github.com/sponsors/ishandutta2007).
+
+---
+
+##  Star History
+
+[![Star History Chart](https://star-history.dera.page/svg?repos=ishandutta2007/Awesome-Agent-Identity-Verification-IAM-Systems&type=date&legend=top-left)](https://star-history.dera.page/#ishandutta2007/Awesome-Agent-Identity-Verification-IAM-Systems&type=date&legend=top-left)
 
 ---
 
