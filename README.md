@@ -1,241 +1,198 @@
-# Awesome-Agent-Identity-Verification-IAM-Systems
-
-## Top Agent Identity Verification & IAM Systems Ecosystem
-
-
-
-**Curated List of SaaS Products & Open-Source GitHub Projects**  
-
-*Focused on Non-Human Identity Management, Agent Credentialing & Delegated Authorization*  
-
-**Last updated: March 2026**
-
-
-
-This repository tracks notable **SaaS platforms** and **open-source projects** for **Agent Identity Verification & IAM**. These tools enable organizations to treat AI agents as first-class non-human identities with their own lifecycle, least-privilege scopes, cryptographic credentials, and audit trails—answering "who is this agent?" and "what is it authorized to access?" .
-
-
-
-**Examples** include Descope, WorkOS, Clerk, Auth0, Stytch, Frontegg, Okta, Ping Identity, CyberArk, and Beyond Identity (the category leaders).
-
-
-
-**Open-source emphasis**: This section is heavily expanded with every major active project for self-hosting, verifiable agent credentials, and open IAM stacks—ideal for platform engineers, security architects, and developers seeking transparent, vendor-independent agent identity infrastructure.
-
-
-
-Contributions welcome! Open a PR to add/update entries. Keep descriptions factual and link to official sites.
-
-
-
-## Table of Contents
-
-- [SaaS/Hosted Platforms](#saas-hosted-platforms)
-
-- [Open-Source GitHub Projects](#open-source-github-projects)
-
-- [How to Contribute](#how-to-contribute)
-
-- [Disclaimer](#disclaimer)
-
-
-
-## SaaS/Hosted Platforms
-
-
-
-- **[Okta](https://www.okta.com/)**  
-
-  Enterprise IAM with agent identity features. Named a Leader in the 2026 ISG Buyers Guide for Non-Human Identities Platforms, with agent identity capabilities added in Q1-Q2 2026 . Offers Cross App Access for delegated agent authorization .
-
-
-
-- **[CyberArk](https://www.cyberark.com/)**  
-
-  Leader in Non-Human Identity Management per ISG 2026, with exemplary ratings across Product Experience categories . Conjur provides secrets management for machine identities. Acquired Venafi in 2024 for certificate-based machine identity .
-
-
-
-- **[Descope](https://www.descope.com/)**  
-
-  Agent identity platform with per-agent identities, tool-level scopes, and audit. Version 2.0 (January 2026) added agents as first-class identities with agent directory. Supports OAuth 2.1, DCR, token exchange, ID-JAG, and Cross-App Access. Free tier: 7,500 MAU, 2,000 consents, 2,000 tokens .
-
-
-
-- **[WorkOS](https://workos.com/)**  
-
-  AuthKit described as a spec-compatible authorization server for MCP, with dynamic client registration, OAuth-protected resource metadata, and PKCE. Standalone Connect allows keeping existing login UI while delegating MCP client authorization .
-
-
-
-- **[Stytch](https://stytch.com/)**  
-
-  Connected Apps turns your app into an identity provider so agents act on users' behalf. Implements OAuth 2.1, dynamic client registration, RBAC scopes, and device authorization for human approval. Core rule: "Users can only give an app the same permissions they themselves have." Free tier: 10,000 MAU + agents .
-
-
-
-- **[Auth0](https://auth0.com/)**  
-
-  Supports OAuth 2.1, DCR, PKCE, and JWKS for MCP authorization. Teams write Actions to map MCP client registrations to the right tenant. Auth0's MCP server is for managing the tenant, not for protecting MCP servers .
-
-
-
-- **[Clerk](https://clerk.com/)**  
-
-  OAuth 2.1 support with JWKS at discoverable endpoints. DCR supported on certain plan tiers. Dedicated MCP documentation was thinner as of mid-2026 but expanding .
-
-
-
-- **[Frontegg](https://frontegg.com/)**  
-
-  Customer identity platform with agent identity capabilities for B2B SaaS applications.
-
-
-
-- **[Ping Identity](https://www.pingidentity.com/)**  
-
-  Rated "Innovative" in the 2026 ISG IAM Buyers Guide for Product Experience . Offers agentic IAM products launched Q1-Q2 2026 .
-
-
-
-- **[Beyond Identity](https://www.beyondidentity.com/)**  
-
-  Passwordless authentication with device-bound credentials. Rated "Merit" in the 2026 ISG IAM Buyers Guide .
-
-
-
-## Open-Source GitHub Projects
-
-
-
-- **[ThunderID (WSO2)](https://github.com/Malith-19/thunder)**  
-
-  Lightweight, Go-based IAM stack built to secure humans, AI agents, and machines (Apache-2.0). Designed for the agentic era with **agent-native identity**—managing AI agents as first-class identities with delegated authority, consent-aware access, and traceability. Features **post-quantum-safe by design** with crypto-agile foundation, **decentralized identity** support (DIDs, verifiable credentials, OpenID4VCI/OpenID4VP), OAuth 2.1 with PAR and PKCE, and **declarative GitOps-ready** YAML resource definitions. Includes MCP server for managing IAM from AI agents .
-
-
-
-- **[SoulAuth (TrantorLabs)](https://github.com/TrantorLabs/SoulAuth)**  
-
-  Rust-based identity infrastructure with explicit security boundaries (license varies). Features **AI actor identity** via Ed25519 challenge-response—no email, no password, no user row. Supports multiple active keys per identity, so each machine holds its own and the log records which key authenticated. Includes OIDC provider with PKCE, MFA (TOTP), server-side sessions, and **tamper-evident audit**. ~24k lines of Rust, 196 unit tests, 77 architecture invariants .
-
-
-
-- **[AGNTCY Identity (Linux Foundation)](https://github.com/agntcy/identity-service)**  
-
-  Open-source agent identity infrastructure (Apache-2.0) from the AGNTCY project—a Linux Foundation initiative with 75+ collaborating organizations. Defines identity assignment with **open** (no centralized authority), **collision-free** (UUID per entity), and **verifiable** (Verifiable Credential as Identity Badge) properties. Supports W3C DIDs and VCs. Features **Task/Tool-Based Access Control (TBAC)** with optional human-in-the-loop approval. Demo includes Financial Assistant with agents and MCP server .
-
-
-
-- **[OpenA2A AIP](https://datatracker.ietf.org/doc/html/draft-fane-opena2a-aip-02)**  
-
-  IETF Internet-Draft for Agent Identity Protocol (AIP). Defines three conformance levels: **Local Identity** (SDK/CLI, Ed25519 keypair), **Managed Identity** (identity provider with trust scoring and centralized audit), and **Federated Identity** (DID resolution, verifiable credentials, cross-platform trust). Uses Ed25519 with hybrid ML-DSA-65 for post-quantum readiness. Agent identifier format: `aim_` + first 8 hex chars of SHA-256 public key digest .
-
-
-
-- **[SPIFFE/SPIRE](https://github.com/spiffe/spire)**  
-
-  Open standard for workload identity (Apache-2.0). Issues short-lived, verifiable identities to workloads and agents without long-lived secrets. Widely adopted as the foundation for zero-trust machine identity. Listed in the 2026 NHI management tools guide as the open standard for workload identity .
-
-
-
-- **[Keycloak](https://github.com/keycloak/keycloak)**  
-
-  Leading open-source IAM (Apache-2.0). Features SSO, social login, MFA, LDAP/AD integration, SAML, OIDC, and comprehensive admin console. Foundation for many enterprise identity deployments. Rated "Merit" in the 2026 ISG IAM Buyers Guide .
-
-
-
-- **[Ory](https://github.com/ory)**  
-
-  Modular, cloud-native identity stack (Apache-2.0). Components include Ory Kratos (identity management), Ory Hydra (OAuth2/OIDC), and Ory Keto (authorization). API-first design optimized for Kubernetes. AGNTCY demo supports Ory as an IdP for agent onboarding .
-
-
-
-- **[ZITADEL](https://github.com/zitadel/zitadel)**  
-
-  Open-source identity infrastructure (Apache-2.0) built for multi-tenancy. Features SSO, MFA, Passkeys, OIDC, SAML, SCIM, LDAP, and comprehensive audit trail via immutable event stream .
-
-
-
-- **[Authentik](https://github.com/goauthentik/authentik)**  
-
-  Open-source Identity Provider (MIT) for modern SSO. Supports SAML, OAuth2/OIDC, LDAP, RADIUS. Designed for self-hosting from small labs to large production clusters .
-
-
-
-- **[Teleport](https://github.com/gravitational/teleport)**  
-
-  Infrastructure identity platform (AGPL-3.0) named an Overall Leader in KuppingerCole's 2026 Zero Trust Platforms report. Certificate-backed, secretless approach securing humans, machines, workloads, and AI agents. Provides Zero Trust access to MCP servers that agents depend on. Short-lived certificate model with mature access workflows .
-
-
-
-- **[Aembit](https://aembit.io/)**  
-
-  Workload and agent identity platform (open-core) for secretless, policy-based access between workloads. Brokers just-in-time access without stored credentials. Positioned for the shift from long-lived secrets to short-lived identity .
-
-
-
-- **[AgentID](https://github.com/AgentID)**  
-
-  Open-source agent identity provider for the case where agents arrive at your app as prospective customers from organizations you have no relationship with. Add AgentID as a custom OIDC provider in Clerk, Supabase, Auth0, Better Auth, or Auth.js .
-
-
-
-### Additional Strong Open-Source Options
-
-
-
-- **[FusionAuth](https://github.com/FusionAuth/fusionauth)** — Developer-focused identity platform (Apache-2.0 for community) with SSO, MFA, and extensive API/SDK support .
-
-- **[Logto](https://github.com/logto-io/logto)** — Open-source IAM (MPL-2.0) for modern apps with OIDC, SAML, MFA, RBAC, and organization-scoped login .
-
-- **[Hanko](https://github.com/teamhanko/hanko)** — Open-source authentication (AGPL-3.0) with passkeys, social logins, SAML SSO, and MFA .
-
-- **[SimpleSAMLphp](https://github.com/simplesamlphp/simplesamlphp)** — Native PHP authentication application (LGPL-2.1) for SAML federation .
-
-- **[pac4j](https://github.com/pac4j/pac4j)** — Security engine for Java (Apache-2.0) supporting OAuth, CAS, SAML, OIDC, LDAP, JWT .
-
-- Community **n8n** workflows for agent identity provisioning and audit alerting.
-
-
-
-**Frameworks for building custom systems**: Combine **ThunderID** or **SoulAuth** as the core IAM stack with **SPIFFE/SPIRE** for workload identity, **AGNTCY Identity** for verifiable agent credentials, **Teleport** for MCP server access governance, and **PostgreSQL/SurrealDB** for persistence—creating a fully self-hosted, enterprise-grade agent identity verification platform.
-
-
-
-## How to Contribute
-
-
-
-1. Fork the repo.
-
-2. Add/edit entries in `README.md` (follow existing format).
-
-3. Include: name, link, 1–2 sentence description, and whether it's SaaS or open-source.
-
-4. Submit PR with a short explanation.
-
-
-
-Star the repo if you find it useful!
-
-
-
-## Disclaimer
-
-
-
-- This is a **community-curated** list — not exhaustive and not an endorsement.
-
-- Agent identity systems handling authentication and authorization must comply with security standards (SOC 2, ISO 27001, GDPR, etc.).
-
-- Self-hosted open-source solutions require proper security hardening, cryptographic key management, and ongoing maintenance. Agentic IAM is an emerging field—only 18% of professionals say they are highly confident their IAM can handle agents (Cloud Security Alliance / Strata, February 2026) . Standards frameworks from IETF, NIST, and W3C are still maturing .
-
-
+<div align="center">
+
+![Awesome Agent Identity & IAM Systems Banner](assets/banner.svg)
+
+# 🛡️ Awesome Agent Identity Verification & IAM Systems 🤖
+
+**The Definitive Curated Directory of SaaS Platforms, Open-Source Infrastructure, Protocols, and Architectural Standards for Autonomous AI Agent Identity, Non-Human Identity Management (NHI), and Delegated Authorization.**
+
+<p align="center">
+  <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a><a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Agent-Identity-Verification-IAM-Systems/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Agent-Identity-Verification-IAM-Systems?style=flat-square&color=yellow" alt="Stars" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Agent-Identity-Verification-IAM-Systems/network/members"><img src="https://img.shields.io/github/forks/ishandutta2007/Awesome-Agent-Identity-Verification-IAM-Systems?style=flat-square&color=blue" alt="Forks" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Agent-Identity-Verification-IAM-Systems/issues"><img src="https://img.shields.io/github/issues/ishandutta2007/Awesome-Agent-Identity-Verification-IAM-Systems?style=flat-square&color=orange" alt="Issues" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Agent-Identity-Verification-IAM-Systems/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Agent-Identity-Verification-IAM-Systems/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome" /></a>
+  <a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
+</p>
 
 ---
 
+*Curated with precision for Security Architects, AI Platform Engineers, DevSecOps Leaders, and Identity Practitioners.*
 
+</div>
 
-**Made for security architects, platform engineers, IAM administrators, and developers building transparent agent identity solutions.**  
+## 📑 Table of Contents
 
-Let's make Agent Identity Verification & IAM more open, data-driven, and trustworthy.
+- [🌐 Executive Overview](#-executive-overview)
+- [📈 Sector Overview & Market Dynamics](#-sector-overview--market-dynamics)
+- [☁️ Enterprise SaaS & Hosted Platforms](#️-enterprise-saas--hosted-platforms)
+- [💻 Open-Source GitHub Projects](#-open-source-github-projects)
+- [📜 Open Standards, RFCs & Protocols](#-open-standards-rfcs--protocols)
+- [🏗️ Architectural Reference Blueprint](#️-architectural-reference-blueprint)
+- [🤝 How to Contribute](#-how-to-contribute)
+- [⚖️ Disclaimer](#️-disclaimer)
+
+---
+
+## 🌐 Executive Overview
+
+As autonomous AI agents, LLM tool-calling routines, and Model Context Protocol (MCP) servers rapidly proliferate into production systems, organizations face a generational identity security paradigm shift: **machine and agent identities outnumber human identities by over 20-to-1**.
+
+Traditional Identity & Access Management (IAM) systems designed exclusively for human interactive sessions (passwords, browser cookies, interactive MFA) cannot satisfy the demands of autonomous software actors. **Agent Identity Verification & IAM Systems** solve this critical gap by treating AI agents as verifiable, first-class non-human entities equipped with:
+
+- 🪪 **Cryptographic Identity Attestation**: Ed25519 / X.509 SVID credentials and W3C Verifiable Credentials (VCs).
+- 🔐 **Delegated Authorization & Scoping**: Dynamic Client Registration (DCR), OAuth 2.1, Token Exchange (RFC 8693), and Task-Based Access Control (TBAC).
+- 🛡️ **Model Context Protocol (MCP) Security**: Least-privilege authorization policies governing tool invocation, external API access, and database interactions.
+- 📋 **Tamper-Evident Auditability**: Cryptographically verified audit logging answering *"Which agent acted on whose behalf, under what authority, and to what boundary?"*
+
+---
+
+## 📈 Sector Overview & Market Dynamics
+
+The global Identity and Access Management (IAM) market is estimated at **$18.5 Billion in 2025** and is projected to expand past **$41.5 Billion by 2030** (~17.5% CAGR). Within this space, the specialized **Non-Human Identity (NHI) and AI Agent IAM sector** represents one of the fastest-accelerating security frontiers—valued at approximately **$2.8 Billion in 2025/2026** and forecasted to eclipse **$14.2 Billion by 2032** at an extraordinary **31.4% CAGR**, spurred by the exponential deployment of agentic workflows and multi-agent microservices.
+
+In terms of industry concentration, the market currently exhibits a **bimodal structure with moderate fragmentation at the developer/innovation layer and high concentration (winner-take-most) at the enterprise governance platform layer**:
+- **Innovation & Developer Gateway Tier (Moderately Fragmented)**: Agile, venture-backed developer-first authentication platforms (e.g., Descope, WorkOS, Clerk) are competing vigorously to establish the de facto runtime protocol standards for MCP authorization, dynamic client registration, and local agent credentialing.
+- **Enterprise Core Governance Tier (Concentrated / Winner-Take-Most)**: Established cybersecurity and enterprise IAM giants (Okta, CyberArk, Palo Alto Networks, Ping Identity/ForgeRock) possess insurmountable enterprise sales moats, deep compliance accreditations (FedRAMP, SOC2 Type II, ISO 27001), and multi-billion-dollar balance sheets. These incumbents are aggressively pursuing acquisitions (e.g., Palo Alto acquiring CyberArk for $25B, Okta acquiring Auth0 for $6.5B, Twilio acquiring Stytch) to absorb innovative point solutions into unified, single-pane-of-glass human and agent identity fabrics.
+
+---
+
+## ☁️ Enterprise SaaS & Hosted Platforms
+
+The following hosted SaaS platforms provide managed identity, authentication, credential lifecycle management, and delegated authorization frameworks for AI agents and machine workloads.
+
+> [!NOTE]
+> Platforms are sorted in **descending order by company scale** (Market Capitalization / Enterprise Valuation / Annual Recurring Revenue).
+
+| 🏢 Platform | 💰 Company Scale (Valuation / Revenue) | 🏷️ Starting Pricing | 🎁 Free Tier / Trial Limits | 🛡️ Agent Identity & IAM Capabilities |
+| :--- | :--- | :--- | :--- | :--- |
+| **[Okta](https://www.okta.com/)** | **~$38.5B Market Cap**<br>*(~$2.7B - $3.0B TTM Revenue)* | **$6.00 / user / month**<br>*(Workforce Identity Cloud Starter, billed annually, $1,500/yr min contract)* or **$23.00 / month** *(Customer Identity Essentials)* | **Free Forever Developer Edition**: Up to 7,500 MAU forever, or **30-Day Free Trial** for Workforce Identity (up to 50 test users & adaptive MFA) | 🤖 Cross-App Access for delegated agent authorization; dynamic token exchange; automated agent directory lifecycle governance; ISG 2026 Non-Human Identity Leader. |
+| **[CyberArk](https://www.cyberark.com/)** | **~$25.0B Valuation**<br>*(Acquisition by Palo Alto Networks; $20.7B Market Cap; ~$1.34B ARR)* | **$5.00 / user / month**<br>*(CyberArk Identity Workforce SSO & MFA starter tier)* or **$3,500 / year base** for Conjur Enterprise Secrets | **30-Day Free Evaluation Proof-of-Concept** (or 14-day dedicated virtual sandbox lab supporting up to 100 endpoints and machine workloads) | 🔐 Conjur secretless machine-to-machine identity broker; Venafi PKI certificate-based workload credentialing; privileged agent session monitoring and credential rotation. |
+| **[Auth0](https://auth0.com/)** *(by Okta)* | **$6.5B Valuation**<br>*(Acquired by Okta; operates as Okta Customer Identity Cloud)* | **$23.00 / month**<br>*(B2C Essentials plan up to 1,000 MAU)* or **$130.00 / month** *(B2B Starter plan up to 1,000 MAU)* | **Free Forever Plan**: Up to 7,500 MAUs, unlimited logins, up to 3 external social/enterprise identity connections, and custom Extensibility Actions | ⚡ Spec-compliant OAuth 2.1, Dynamic Client Registration (DCR), PKCE, and JWKS discovery for MCP servers; custom Actions for routing agent client registrations to specific tenants. |
+| **[Ping Identity](https://www.pingidentity.com/)** | **~$2.8B Valuation**<br>*(Acquired by Thoma Bravo; ~$800M - $1.0B combined ARR post-ForgeRock)* | **$3.00 / user / month**<br>*(PingOne Workforce Identity starter tier)* or **$20,000 / year base** for PingOne Customer Identity (CIAM) | **30-Day Free Trial**: Supports up to 5 sandbox environments and up to 1,000 active test identities with full SSO, MFA, and API governance features | 🌐 Agentic IAM suite (launched 2026); decentralized identity verifiable credentials; zero-trust contextual authorization and dynamic risk-signal scoring. |
+| **[WorkOS](https://workos.com/)** | **$2.0B Valuation**<br>*(Series C $100M raised March 2026; $196M total raised; ~$30M ARR)* | **$49.00 / month base + $0.025 / MAU**<br>*(AuthKit Scale tier)* or **$125.00 / connection / month** for Enterprise SAML SSO / SCIM Directory Sync | **Free Forever Plan**: AuthKit is 100% free forever for up to 1,000,000 MAUs, including user management, passkeys, and 1 enterprise SSO connection | 🤖 Spec-compatible OAuth 2.1 authorization server for Model Context Protocol (MCP); Dynamic Client Registration (DCR), PKCE token exchange, and standalone Connect. |
+| **[Beyond Identity](https://www.beyondidentity.com/)** | **$1.1B Valuation**<br>*(Series C $100M led by Evolution Equity; $205M total raised; ~$38M ARR)* | **$3.00 / user / month**<br>*($36/user/yr with 25-seat min commitment of $900/yr)* for Secure Workforce MFA, or **$0.03 / MAU** for Secure Customers | **30-Day Free Trial**: Full-featured access for up to 25 users/workloads with hardware-bound cryptographic key verification and continuous posture validation | 🛡️ Passwordless, cryptographic hardware-bound credentials; secretless agent-to-service authentication; continuous zero-trust risk posture validation for automated processes. |
+| **[Stytch](https://stytch.com/)** | **$1.0B Valuation**<br>*(Acquired by Twilio in late 2025; $146M venture funding raised prior)* | **$99.00 / month**<br>*(B2B Starter plan for 1,000 MAU + 5 SSO connections)* or **$0.02 / MAU** *(Consumer pay-as-you-go)* | **Free Forever Plan**: Up to 10,000 MAUs, 25 M2M/agent client credentials, and 100 free SMS OTP authentications/month | 🔗 "Connected Apps" agent identity framework with OAuth 2.1, dynamic client registration (DCR), RBAC tool scopes, and human-in-the-loop device approvals. |
+| **[Clerk](https://clerk.com/)** | **~$650M Valuation**<br>*(Series C $50M in Oct 2025 led by Menlo & Anthropic; $105M+ raised; ~$29M ARR)* | **$25.00 / month**<br>*(Clerk Pro plan, covers first 10,000 MAU, then $0.02 / additional MAU)* | **Free Forever Plan**: Up to 10,000 MAUs, unlimited authentication requests, standard MFA, and community support | ⚡ OAuth 2.1 with public JWKS discovery; native Agent Identity primitives for Next.js, Node.js, and React; seamless MCP middleware authentication. |
+| **[Descope](https://www.descope.com/)** | **~$500M Valuation**<br>*($88M total seed/extension funding led by Lightspeed & Notable Capital)* | **$99.00 / month**<br>*(Descope Pro tier base with custom domain and advanced RBAC, then $0.05 / MAU)* | **Free Forever Plan**: Up to 7,500 MAUs, 2,000 agent authorizations/consents, 2,000 M2M tokens, and unlimited passkeys | 🤖 Dedicated Per-Agent Identity Directory; tool-level least privilege scopes; ID-JAG token exchange, OAuth 2.1 DCR, and cross-application audit logging. |
+| **[Frontegg](https://frontegg.com/)** | **~$250M Valuation**<br>*(Series B $40M led by Stripes; $70M total funding raised; ~$8M - $11M ARR)* | **$99.00 / month**<br>*(Frontegg Starter plan, covers first 2,500 MAU, then $0.03 / additional MAU)* | **Free Forever Community Plan**: Up to 1,000 MAUs, self-hosted or cloud login box, role management, and multi-tenant self-service user portals | 🏢 Multi-tenant organization boundaries, machine-to-machine (M2M) tokens, fine-grained RBAC/ABAC tool permissions, and detailed audit log forwarding. |
+
+---
+
+## 💻 Open-Source GitHub Projects
+
+A comprehensive collection of open-source IAM stacks, zero-trust gateways, policy decision points (PDP), and verifiable credential engines for self-hosted and vendor-independent agent identity infrastructure.
+
+> [!TIP]
+> Repositories are sorted in **descending order by GitHub star count**. Star badges display real-time metrics and link directly to each project's stargazers page.
+
+| 📦 Repository & Link | ⭐ Community Stargazers | 📜 License | 🎯 Architecture & Agent Identity Focus |
+| :--- | :---: | :---: | :--- |
+| **[Keycloak](https://github.com/keycloak/keycloak)** | [![GitHub stars](https://img.shields.io/github/stars/keycloak/keycloak?style=social&color=white)](https://github.com/keycloak/keycloak/stargazers) | `Apache-2.0` | 🏰 **Enterprise Open-Source IAM Standard**: Industry-standard identity broker supporting OAuth 2.0 / OpenID Connect, SAML 2.0, fine-grained authorization policies, and automated client onboarding for enterprise agent meshes. |
+| **[Authelia](https://github.com/authelia/authelia)** | [![GitHub stars](https://img.shields.io/github/stars/authelia/authelia?style=social&color=white)](https://github.com/authelia/authelia/stargazers) | `Apache-2.0` | 🛡️ **Post-Quantum Ready Gatekeeper**: Single Sign-On and multi-factor authentication portal designed for reverse proxies (Nginx, Traefik, Envoy, Caddy) protecting upstream agent APIs and private MCP servers. |
+| **[Authentik](https://github.com/goauthentik/authentik)** | [![GitHub stars](https://img.shields.io/github/stars/goauthentik/authentik?style=social&color=white)](https://github.com/goauthentik/authentik/stargazers) | `MIT` | 🧩 **Modular Policy-Driven IdP**: Extremely flexible identity provider featuring customizable execution stages, OAuth2/OIDC, SAML, LDAP, and custom flow logic for authenticating programmatic agents and machine services. |
+| **[Teleport](https://github.com/gravitational/teleport)** | [![GitHub stars](https://img.shields.io/github/stars/gravitational/teleport?style=social&color=white)](https://github.com/gravitational/teleport/stargazers) | `AGPL-3.0` | 🔒 **Zero Trust Infrastructure Access**: Issues short-lived, cryptographically signed certificates for humans, microservices, and AI agents accessing SSH nodes, Kubernetes clusters, databases, and internal MCP endpoints. |
+| **[Ory Hydra](https://github.com/ory/hydra)** | [![GitHub stars](https://img.shields.io/github/stars/ory/hydra?style=social&color=white)](https://github.com/ory/hydra/stargazers) | `Apache-2.0` | ⚡ **High-Performance OAuth 2.1 / OIDC**: Hardened, internet-scale OpenID Certified™ engine written in Go; trusted by leading AI platforms for secure headless machine-to-machine token issuance and delegated authorization. |
+| **[SuperTokens](https://github.com/supertokens/supertokens-core)** | [![GitHub stars](https://img.shields.io/github/stars/supertokens/supertokens-core?style=social&color=white)](https://github.com/supertokens/supertokens-core/stargazers) | `Apache-2.0` | 🚀 **Developer-First Auth Engine**: Modular architecture supporting microservice sessions, M2M client credential flows, third-party provider federation, and customizable recipes tailored for agent service backends. |
+| **[ZITADEL](https://github.com/zitadel/zitadel)** | [![GitHub stars](https://img.shields.io/github/stars/zitadel/zitadel?style=social&color=white)](https://github.com/zitadel/zitadel/stargazers) | `Apache-2.0` | 📊 **Event-Sourced Multi-Tenant Identity**: Cloud-native identity platform built on event sourcing and immutable audit logs; features Passkeys, OAuth 2.1, and project-level role grants ideal for multi-agent authorization. |
+| **[Logto](https://github.com/logto-io/logto)** | [![GitHub stars](https://img.shields.io/github/stars/logto-io/logto?style=social&color=white)](https://github.com/logto-io/logto/stargazers) | `MPL-2.0` | 🧑‍🚀 **Modern IAM for AI & SaaS**: Developer-centric authentication platform with native support for Machine-to-Machine (M2M) credentials, organization-scoped permissions, and OIDC / OAuth 2.1 token issuance. |
+| **[Casdoor](https://github.com/casdoor/casdoor)** | [![GitHub stars](https://img.shields.io/github/stars/casdoor/casdoor?style=social&color=white)](https://github.com/casdoor/casdoor/stargazers) | `Apache-2.0` | 🤖 **Agent-First Gateway & IAM**: UI-first centralized IAM server with native Model Context Protocol (MCP) gateway plugins, OpenClaw support, OAuth 2.0 / OIDC / SAML, and WebAuthn authentication. |
+| **[Ory Kratos](https://github.com/ory/kratos)** | [![GitHub stars](https://img.shields.io/github/stars/ory/kratos?style=social&color=white)](https://github.com/ory/kratos/stargazers) | `Apache-2.0` | 🧠 **Headless Cloud-Native Identity**: API-first user and identity management platform in Go; decouples identity storage and verification mechanisms, providing foundational building blocks for agent registries. |
+| **[Hanko](https://github.com/teamhanko/hanko)** | [![GitHub stars](https://img.shields.io/github/stars/teamhanko/hanko?style=social&color=white)](https://github.com/teamhanko/hanko/stargazers) | `AGPL-3.0` | 🔑 **Passkey & Modern Auth Engine**: Lightweight authentication backend built around modern FIDO2 / WebAuthn standards, OIDC, and structured audit event feeds for securing agent management consoles. |
+| **[OpenFGA](https://github.com/openfga/openfga)** | [![GitHub stars](https://img.shields.io/github/stars/openfga/openfga?style=social&color=white)](https://github.com/openfga/openfga/stargazers) | `Apache-2.0` | 🕸️ **Relationship-Based Access Control (ReBAC)**: High-performance fine-grained authorization engine inspired by Google Zanzibar (CNCF Sandbox); ideal for determining complex agent-to-tool and agent-to-resource permissions. |
+| **[OPAL (Open Policy Administration Layer)](https://github.com/permitio/opal)** | [![GitHub stars](https://img.shields.io/github/stars/permitio/opal?style=social&color=white)](https://github.com/permitio/opal/stargazers) | `Apache-2.0` | 📡 **Real-Time Policy State Sync**: Open administration layer keeping Open Policy Agent (OPA) and Cedar policy decision points synchronized in real-time with event-driven data changes across agent clusters. |
+| **[Cerbos](https://github.com/cerbos/cerbos)** | [![GitHub stars](https://img.shields.io/github/stars/cerbos/cerbos?style=social&color=white)](https://github.com/cerbos/cerbos/stargazers) | `Apache-2.0` | 📝 **Context-Aware Policy Decision Point (PDP)**: Stateless authorization layer enabling fine-grained, context-aware ABAC/RBAC decisions across microservices and AI agent actions using declarative human-readable YAML policies. |
+| **[SPIFFE / SPIRE](https://github.com/spiffe/spire)** | [![GitHub stars](https://img.shields.io/github/stars/spiffe/spire?style=social&color=white)](https://github.com/spiffe/spire/stargazers) | `Apache-2.0` | 🪪 **CNCF Graduated Workload Identity Standard**: Issues short-lived, cryptographically verifiable X.509 and JWT SVID identity documents to workloads and agents without static API keys or long-lived secrets. |
+| **[pac4j](https://github.com/pac4j/pac4j)** | [![GitHub stars](https://img.shields.io/github/stars/pac4j/pac4j?style=social&color=white)](https://github.com/pac4j/pac4j/stargazers) | `Apache-2.0` | ☕ **Java / JVM Security Engine**: Robust authentication and identity federation library supporting OIDC, SAML, CAS, OAuth, and JWT verification across enterprise Java microservices and agent backends. |
+| **[SimpleSAMLphp](https://github.com/simplesamlphp/simplesamlphp)** | [![GitHub stars](https://img.shields.io/github/stars/simplesamlphp/simplesamlphp?style=social&color=white)](https://github.com/simplesamlphp/simplesamlphp/stargazers) | `LGPL-2.1` | 🐘 **PHP Federation Application**: Native PHP authentication and identity federation platform for SAML 2.0 and Shibboleth architectures. |
+| **[AGNTCY Identity Service](https://github.com/agntcy/identity-service)** | [![GitHub stars](https://img.shields.io/github/stars/agntcy/identity-service?style=social&color=white)](https://github.com/agntcy/identity-service/stargazers) | `Apache-2.0` | 🌐 **Linux Foundation Agent Identity Stack**: Decentralized identity infrastructure for agentic services using W3C DIDs and Verifiable Credentials with Task/Tool-Based Access Control (TBAC) and MCP server integration. |
+| **[Agent Identity Protocol (OAIP)](https://github.com/openagentidentityprotocol/agentidentityprotocol)** | [![GitHub stars](https://img.shields.io/github/stars/openagentidentityprotocol/agentidentityprotocol?style=social&color=white)](https://github.com/openagentidentityprotocol/agentidentityprotocol/stargazers) | `Apache-2.0` | 🛡️ **MCP Security Proxy & Policy Layer**: Zero-trust security gateway and policy enforcement proxy for Model Context Protocol (MCP) tools featuring human-in-the-loop approvals, DLP scanning, and audit logging. |
+| **[SoulAuth](https://github.com/TrantorLabs/SoulAuth)** | [![GitHub stars](https://img.shields.io/github/stars/TrantorLabs/SoulAuth?style=social&color=white)](https://github.com/TrantorLabs/SoulAuth/stargazers) | `Custom / Source-Available` | 🦀 **High-Assurance Rust Identity**: High-performance identity framework with native AI actor authentication via Ed25519 challenge-response (no user table or password), multi-key tracking, and tamper-evident audit logs. |
+| **[ThunderID](https://github.com/Malith-19/thunder)** | [![GitHub stars](https://img.shields.io/github/stars/Malith-19/thunder?style=social&color=white)](https://github.com/Malith-19/thunder/stargazers) | `Apache-2.0` | ⚡ **Agent-Native Go IAM Stack (WSO2 Community)**: Post-quantum crypto-agile IAM built to secure human and AI agent identities with delegated authority, decentralized identity (DIDs/VCs), GitOps YAML, and native MCP support. |
+
+---
+
+## 📜 Open Standards, RFCs & Protocols
+
+The emerging agent identity landscape builds on open, interoperable Internet standards and draft specifications:
+
+- 📋 **[OAuth 2.1](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1-11)** — Consolidates best-practice security: mandates PKCE, deprecates Implicit and Resource Owner Password Credentials grants, and formalizes token exchange for delegated autonomous agent access.
+- 🔄 **[OAuth 2.0 Token Exchange (RFC 8693)](https://datatracker.ietf.org/doc/html/rfc8693)** — The formal protocol for cross-domain and multi-tier delegation, allowing an agent to exchange a user or client token for a scoped, downstream service token.
+- ⚙️ **[Dynamic Client Registration (RFC 7591)](https://datatracker.ietf.org/doc/html/rfc7591)** — Standard protocol allowing autonomous agents and runtime instances to dynamically register OAuth clients with authorization servers on the fly.
+- 🪪 **[OpenA2A Agent Identity Protocol (AIP)](https://datatracker.ietf.org/doc/html/draft-fane-opena2a-aip-02)** — IETF Internet-Draft establishing a three-tier agent identity hierarchy: Local Identity (Ed25519 keypair), Managed Identity (IdP with centralized audit and trust scores), and Federated Identity (DID resolution and cross-platform trust).
+- 🏷️ **[W3C Decentralized Identifiers (DIDs) v1.0](https://www.w3.org/TR/did-core/)** — Globally unique, cryptographically verifiable identifiers that require no centralized registration authority, enabling self-sovereign agent identities.
+- 📜 **[W3C Verifiable Credentials (VC) Data Model v2.0](https://www.w3.org/TR/vc-data-model-2.0/)** — Tamper-evident credentials issued to agents to attest to qualifications, organization affiliation, and authorized capability boundaries.
+- 🔌 **[Model Context Protocol (MCP) Specification](https://modelcontextprotocol.io/)** — Open protocol standardizing how AI applications provide context and tools to LLMs, serving as the primary integration interface for agent IAM controls.
+
+---
+
+## 🏗️ Architectural Reference Blueprint
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│                   HUMAN USER OR SYSTEM INITIATOR                       │
+└───────────────────────────────────┬────────────────────────────────────┘
+                                    │ 1. Initiates Delegated Task
+                                    ▼
+┌────────────────────────────────────────────────────────────────────────┐
+│                 AGENT RUNTIME & ORCHESTRATION ENGINE                   │
+│                                                                        │
+│   • Generates Ephemeral Keypair (Ed25519 / SVID)                       │
+│   • Dynamic Client Registration (RFC 7591)                             │
+│   • Attests Identity to Agent Directory                                │
+└───────────────────────────────────┬────────────────────────────────────┘
+                                    │ 2. Request Token Exchange (RFC 8693)
+                                    ▼
+┌────────────────────────────────────────────────────────────────────────┐
+│              AUTHORIZATION SERVER & POLICY DECISION POINT              │
+│                 (Descope / WorkOS / Keycloak / Cerbos)                 │
+│                                                                        │
+│   • Verifies Agent Identity & Trust Posture                            │
+│   • Evaluates ReBAC / TBAC Policies & Scopes                           │
+│   • Requires Human-in-the-Loop Approval (if privileged)               │
+│   • Issues Short-Lived Scoped Access Token                             │
+└───────────────────────────────────┬────────────────────────────────────┘
+                                    │ 3. Authorized Tool Call + Token
+                                    ▼
+┌────────────────────────────────────────────────────────────────────────┐
+│                SECURED MCP SERVER & RESOURCE GATEWAY                   │
+│                                                                        │
+│   • Validates JWKS / Token Signature & Scopes                          │
+│   • Enforces Tool-Level Least Privilege Boundaries                     │
+│   • Logs Cryptographic Receipts to Tamper-Evident Audit Trail          │
+└────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 🤝 How to Contribute
+
+Contributions from security researchers, platform engineers, and open-source maintainers are warmly welcome!
+
+1. 🍴 **Fork the repository** to your GitHub account.
+2. 🌿 **Create a topic branch**: `git checkout -b feat/add-agent-identity-tool`.
+3. 📝 **Add or update entries**:
+   - For SaaS platforms: follow the existing tabular format including **Company Scale**, specific **Starting Pricing**, and specific **Free Tier / Trial Limits**.
+   - For Open-Source projects: include name, GitHub link, star badge (`style=social&color=white` linking to `/stargazers`), license, and 1–2 sentence architectural focus. Insert in the correct star-sorted position.
+4. 🧪 **Verify markdown rendering & links**.
+5. 🚀 **Submit a Pull Request** with a concise summary of changes and sources.
+
+---
+
+## ⚖️ Disclaimer
+
+- This repository is a **community-curated, educational directory**—inclusion does not constitute a commercial endorsement.
+- Autonomous agent architectures with access to internal tools, APIs, and data stores must adhere to applicable cybersecurity and data privacy regulations (e.g., SOC 2 Type II, ISO 27001, HIPAA, GDPR).
+- Self-hosted open-source IAM deployments require proper cryptographic key lifecycle management, regular patching, and defense-in-depth posture enforcement.
+
+---
+
+<div align="center">
+
+**Built with ❤️ for the Global AI Security & Identity Community.**  
+*Star ⭐ this repo if you find it helpful for your agentic architecture!*
+
+<a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
+
+</div>
